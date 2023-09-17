@@ -1,5 +1,27 @@
 //bài 1
 
+    var benchMark = +document.getElementById('benchMark').value;
+    var subScore1 = +document.getElementById('subScore1').value;
+    var subScore2 = +document.getElementById('subScore2').value;
+    var subScore3 = +document.getElementById('subScore3').value;
+    var region    = document.getElementById('region').id;
+    var selType    = document.getElementById('selType').id;
+    var avScore = 0;
+
+document.getElementById('btnScore').onclick = function (){
+
+    avScore = calcScore (subScore1, subScore2, subScore3 , region, selType );
+
+    if (avScore <= benchMark) {
+        document.getElementById('result').innerHTML = "Bạn đã rớt." + "Tổng điểm là " +  avScore;
+    } else {
+        document.getElementById('result').innerHTML = "Bạn đã đậu." + "Tổng điểm là " +  avScore;
+
+    }
+
+
+
+}
 
 
 

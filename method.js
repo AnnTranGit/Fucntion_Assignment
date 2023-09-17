@@ -1,7 +1,47 @@
 // Bài 1: 
 
-function calcScore (){
+function calcScore (score1, score2, score3,location, type )
+{
+    var averScore = 0;
+
+    var locScore = 0;
     
+    switch(location)  {
+        case 'selRegion' : {
+            locScore = 0;
+        };break;
+        case 'selA': {
+            locScore = 2;
+        };break;
+        case 'selB': {
+            locScore = 1;
+        };break;
+        case 'selC': {
+            locScore = 0.5;
+        }
+    }
+
+    var typeScore = 0;
+
+    switch(type)  {
+        case 'selObject' : {
+            typeScore = 0;
+        };break;
+        case 'sel1': {
+            typeScore = 2.5;
+        };break;
+        case 'sel2': {
+            typeScore = 1.5;
+        };break;
+        case 'sel2': {
+            typeScore = 1;
+        }
+    }
+
+    averScore = (score1 + score2 + score3)/3 + locScore + typeScore;
+
+    return averScore;
+
 }
 
 
