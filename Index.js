@@ -1,7 +1,9 @@
-// document.getElementById('frmTinhLuong').onsubmit = function(event){
-//     event.preventDefault(); //chan reload trang
-//     tinhLuong();
-// }
+//bài 1
+
+
+
+
+//bài 2
 
 var tiensoKW_duoi50 = 500;
 var tiensoKW_duoi100 = 650;
@@ -19,7 +21,7 @@ document.getElementById('btnTinhTien').onclick = function(event) {
 
     tongTien = tinhTienDien(soKW, tiensoKW_duoi50, tiensoKW_duoi100, tiensoKW_duoi200, tiensoKW_duoi350, tiensoKW_conlai);
 
-    document.getElementById('tinhTienDien').innerHTML = "Họ tên: " + hoTen + " ; " + "Tổng tiền điện: " + tongTien;
+    document.getElementById('tinhTienDien').innerHTML = "Họ tên: " + hoTen + " ; " + "Tổng tiền điện: " + new Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND' }).format(tongTien);
 }
 
 
@@ -34,7 +36,13 @@ document.getElementById('btnTinhTien').onclick = function(event) {
 
     taxPay = calcTax (annualTotal, dpNumber)
 
-    document.getElementById('tax-Pay').innerHTML = "Họ tên: " + fullName + " ---- " + "Thuế phải trả: " + new Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND' }).format(taxPay);
+    document.getElementById('tax-Pay').innerHTML = "Họ tên:" + fullName + " ---- " + "Thuế phải trả:" + new Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND' }).format(taxPay);
 
+}
 
+//Bài 4
+
+function disableInput() {
+    var e = document.getElementById("selCustomer").value;
+    document.getElementById("connectNo").style.display = "company" == e ? "block" : "none"
 }

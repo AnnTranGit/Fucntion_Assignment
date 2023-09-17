@@ -28,6 +28,50 @@
 
   <body>
     <div class="container">
+      <h3 class="text-center mt-5">Bài 1: 🏫 Quản lý tuyển sinh</h3>
+      <div class="card w-75 mx-auto mt-3">
+        <div class="card-header text-center">
+          <h4 class="text-center py-1">Quản lý tuyển sinh</h4>
+        </div>
+        <div class="card-body">
+          <input
+            class="form-control mt-2"
+            placeholder="Nhập điểm chuẩn"
+            id="benchMark"
+          />
+          <select class="form-control form__input mt-4" id="location">
+            <option value="0">Chọn khu vực</option>
+            <option value="2">A</option>
+            <option value="1">B</option>
+            <option value="0.5">C</option>
+          </select>
+          <select class="form-control form__input mt-4" id="selUser">
+            <option value="0">Chọn đối tượng</option>
+            <option value="2.5">1</option>
+            <option value="1.5">2</option>
+            <option value="1">3</option>
+          </select>
+          <input
+            class="form-control mt-4"
+            placeholder="Điểm môn thứ 1"
+            id="subScore1"
+          />
+          <input
+            class="form-control mt-4"
+            placeholder="Điểm môn thứ 2"
+            id="subScore3"
+          />
+          <input
+            class="form-control mt-4"
+            placeholder="Điểm môn thứ 3"
+            id="subScore3"
+          />
+        </div>
+        <div class="card-footer">
+          <button id="btnScore" class="btn btn-success mt-3">Kết quả</button>
+          <div id="result" class="my-4 alert alert-danger">24 điểm</div>
+        </div>
+      </div>
       <br />
       <hr />
       <br />
@@ -47,7 +91,7 @@
           </div>
         </div>
         <div class="card-footer">
-          <button id="btnTinhTien" class="btn btn-secondary">Tính tiền</button>
+          <button id="btnTinhTien" class="btn btn-success">Tính tiền</button>
           <div id="tinhTienDien" class="m-4">234</div>
         </div>
       </form>
@@ -55,7 +99,9 @@
       <br />
       <hr />
       <br />
-      <h3 class="fw-bold text-center mb-5">💰 Tính thuế thu nhập cá nhân</h3>
+      <h3 class="fw-bold text-center mb-5">
+        Bài 3: 💰 Tính thuế thu nhập cá nhân
+      </h3>
       <div class="card w-75 mx-auto">
         <div class="card-header">
           <h4 class="text-center">Tính thuế thu nhập cá nhân</h4>
@@ -71,10 +117,55 @@
           </div>
         </div>
         <div class="card-footer">
-          <button id="taxbtn" class="btn btn-secondary mt-3">
+          <button id="taxbtn" class="btn btn-success mt-3">
             Tính tiền thuế
           </button>
-          <div id="tax-Pay" class="my-4 alert alert-danger">234</div>
+          <div id="tax-Pay" class="my-4 alert alert-danger">đ100,000,000</div>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <br />
+
+      <h3 class="text-center fw-bolder">Bài 4: 🕸️ Tính tiền cáp</h3>
+      <div class="card w-75 mx-auto">
+        <div class="card-header">
+          <h4 class="text-center">Tính tiền cáp</h4>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <select
+              class="form-control"
+              id="selCustomer"
+              onchange="disableInput()"
+            >
+              <option value="">Chọn loại khách hàng</option>
+              <option value="resident">Nhà Dân</option>
+              <option value="company">Doanh Nghiệp</option>
+            </select>
+            <input
+              class="form-control mt-3"
+              id="cusID"
+              placeholder="Nhập mã khách hàng"
+            />
+            <input
+              class="form-control mt-3"
+              id="channelNo"
+              placeholder="Số kênh cao cấp"
+            />
+            <input
+              style="display: none"
+              class="form-control mt-3"
+              id="connectNo"
+              placeholder="Số kết nối"
+            />
+          </div>
+        </div>
+        <div class="card-footer">
+          <button id="feebtn" class="btn btn-success mt-3">
+            Tính tiền cáp
+          </button>
+          <div id="cableBill" class="my-4 alert alert-danger">đ100,000,000</div>
         </div>
       </div>
     </div>

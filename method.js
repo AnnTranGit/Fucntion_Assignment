@@ -1,5 +1,14 @@
+// Bài 1: 
+
+function calcScore (){
+    
+}
+
+
 
 // Bài 2
+
+
 function tinhTienDien(so_KW, tiensoKW_duoi50, tiensoKW_duoi100, tiensoKW_duoi200, tiensoKW_duoi350, tiensoKW_conlai){
 
     var outputTongTienDien = 0;
@@ -23,11 +32,9 @@ function tinhTienDien(so_KW, tiensoKW_duoi50, tiensoKW_duoi100, tiensoKW_duoi200
 
     outputTongTienDien = tongTienDien;
     return outputTongTienDien;
-
 }
 
 // Bài 3
-
 
 function calcTax (annualIncome, dpNumber){
 
