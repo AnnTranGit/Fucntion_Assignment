@@ -21,3 +21,20 @@ document.getElementById('btnTinhTien').onclick = function(event) {
 
     document.getElementById('tinhTienDien').innerHTML = "Họ tên: " + hoTen + " ; " + "Tổng tiền điện: " + tongTien;
 }
+
+
+//Bài 3
+
+ var taxPay = 0;
+
+ document.getElementById('taxbtn').onclick = function () {
+    var fullName = document.getElementById('fullName').value;
+    var annualTotal = +document.getElementById('annualTotal').value;
+    var dpNumber = +document.getElementById ('dpNumber').value;
+
+    taxPay = calcTax (annualTotal, dpNumber)
+
+    document.getElementById('tax-Pay').innerHTML = "Họ tên: " + fullName + " ---- " + "Thuế phải trả: " + new Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND' }).format(taxPay);
+
+
+}
