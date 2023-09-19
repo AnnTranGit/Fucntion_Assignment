@@ -71,5 +71,38 @@ document.getElementById('btnTinhTien').onclick = function(event) {
 
 function disableInput() {
     var e = document.getElementById("selCustomer").value;
-    document.getElementById("connectNo").style.display = "company" == e ? "block" : "none"
+    document.getElementById("connectNo").style.display = "business" == e ? "block" : "none"
 }
+
+document.getElementById("btncount").onclick = function () {
+    var customerType = document.getElementById("selCustomer").value;
+    var connectionCount = +document.getElementById('connectNo').value;
+    var premiumChannels = +document.getElementById('channelNo').value;
+    var cusID = document.getElementById('cusID').value;
+  
+    var processingFee, basicServiceFee, premiumChannelFee;
+  
+    if (customerType === "business") {
+      processingFee = 15;
+  
+      if (connectionCount <= 10) {
+        basicServiceFee = 75;
+      } else {
+        basicServiceFee = 75 + (connectionCount - 10) * 5;
+      }
+  
+      premiumChannelFee = 50;
+    } else {
+      processingFee = 4.5;
+      basicServiceFee = 20.5;
+      premiumChannelFee = 7.5;
+    }
+  
+    var totalBill =
+      processingFee + basicServiceFee + premiumChannelFee * premiumChannels;
+
+
+  
+    document.getElementById ('totalBill').innerHTML = "Mã khách hàng là " + cusID + ". Tổng chi phí: $" + totalBill.toFixed(2);
+  }
+  
