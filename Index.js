@@ -1,26 +1,31 @@
 //bài 1
 
+
+document.getElementById('btnScore').onclick = function (){
+
     var benchMark = +document.getElementById('benchMark').value;
     var subScore1 = +document.getElementById('subScore1').value;
     var subScore2 = +document.getElementById('subScore2').value;
     var subScore3 = +document.getElementById('subScore3').value;
-    var region    = document.getElementById('region').id;
-    var selType    = document.getElementById('selType').id;
+    var region1    = +document.getElementById('region').value;
+    var selType1    = +document.getElementById('selType').value;
+
     var avScore = 0;
 
-document.getElementById('btnScore').onclick = function (){
 
-    avScore = calcScore (subScore1, subScore2, subScore3 , region, selType );
+    avScore = calcScore (subScore1, subScore2, subScore3 , region1, selType1 );
 
-    if (avScore <= benchMark) {
-        document.getElementById('result').innerHTML = "Bạn đã rớt." + "Tổng điểm là " +  avScore;
+    var stringHTML = '';
+
+
+    if (subScore1 === 0 || subScore2 === 0 || subScore3 === 0) {
+        stringHTML = "Bạn đã rớt. Do có điểm 0"
+    } else if (avScore < benchMark && subScore2 > 0 && subScore3 > 0 && subScore1 > 0) {
+        stringHTML  = "Bạn đã rớt. " + "Tổng điểm là " +  avScore;
     } else {
-        document.getElementById('result').innerHTML = "Bạn đã đậu." + "Tổng điểm là " +  avScore;
-
+        stringHTML = "Bạn đã đậu." + "Tổng điểm là " +  avScore;
     }
-
-
-
+    document.getElementById('examResult').innerHTML = stringHTML;
 }
 
 
@@ -62,7 +67,7 @@ document.getElementById('btnTinhTien').onclick = function(event) {
 
 }
 
-//Bài 4
+// //Bài 4
 
 function disableInput() {
     var e = document.getElementById("selCustomer").value;
